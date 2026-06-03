@@ -1,0 +1,341 @@
+```html
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusturi de Acasă</title>
+
+    <style>
+        body {
+            background-color: lightgray;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            transition: 0.5s;
+        }
+
+        .dark {
+            background-color: #222;
+            color: white;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            transition: 0.5s;
+        }
+
+        .dark .container {
+            background-color: #333;
+        }
+
+        .dark .box {
+            background-color: #444;
+        }
+
+        .dark .text {
+            background-color: #444;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            width: 110px;
+            border-radius: 10px;
+        }
+
+        .logo h1 {
+            color: darkred;
+            font-size: 30px;
+        }
+
+        .menu button {
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            border: 1px solid darkred;
+            background-color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu button:hover {
+            background-color: pink;
+            transform: scale(1.05);
+        }
+
+        .darkButton button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+
+
+        .slider {
+            margin-top: 20px;
+            height: 260px;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 12s infinite;
+        }
+
+        .slides img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            30% {
+                transform: translateX(0);
+            }
+
+            35% {
+                transform: translateX(-100%);
+            }
+
+            65% {
+                transform: translateX(-100%);
+            }
+
+            70% {
+                transform: translateX(-200%);
+            }
+
+            100% {
+                transform: translateX(-200%);
+            }
+        }
+
+
+
+        .categorii {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .box {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 0 10px gray;
+            transition: 0.3s;
+        }
+
+        .box:hover {
+            transform: scale(1.02);
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box p {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            font-size: 35px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px 15px;
+            border-radius: 10px;
+        }
+
+        .text {
+            margin-top: 25px;
+            background-color: #ececec;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .contact {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        @media screen and (max-width: 900px) {
+            .container {
+                width: 90%;
+            }
+
+            .box {
+                height: 220px;
+            }
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                flex-direction: column;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            .menu button {
+                width: 100%;
+            }
+
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .slider {
+                height: 180px;
+            }
+
+            .box {
+                height: 180px;
+            }
+
+            .box p {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="logo">
+                <img src="imagini/logo.jpg" alt="logo">
+                <h1>Gusturi de Acasă</h1>
+            </div>
+
+            <div class="menu">
+
+                <a href="despre-noi.html">
+                    <button>Despre noi</button>
+                </a>
+
+              
+
+                <a href="adauga-reteta.html">
+                    <button>Adaugă o rețetă</button>
+                </a>
+
+            </div>
+
+            <div class="darkButton">
+                <button onclick="schimbaTema()">
+                    Dark / Light
+                </button>
+            </div>
+
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+
+                <img src="imagini/slider1.jpg" alt="mancare">
+                <img src="imagini/slider2.jpg" alt="mancare">
+                <img src="imagini/slider3.jpg" alt="mancare">
+
+            </div>
+        </div>
+
+        <div class="categorii">
+
+            <a href="paste.html">
+                <div class="box">
+                    <img src="imagini/paste.jpg" alt="paste">
+                    <p>Paste</p>
+                </div>
+            </a>
+
+            <a href="pizza.html">
+                <div class="box">
+                    <img src="imagini/pizza.jpg" alt="pizza">
+                    <p>Pizza</p>
+                </div>
+            </a>
+
+            <a href="clatite.html">
+                <div class="box">
+                    <img src="imagini/clatite.jpg" alt="clatite">
+                    <p>Clătite</p>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="text">
+
+            <h2>Bine ați venit!</h2>
+
+            <p>
+                Pe acest site puteți găsi rețete gustoase pentru toate gusturile,
+                iar dacă aveți o rețetă preferată, o puteți trimite și voi!
+            </p>
+
+        </div>
+
+        <div class="contact">
+            <p>Contact: antoniamarghitas@gmail.com</p>
+        </div>
+
+    </div>
+
+    <script>
+        function schimbaTema() {
+            document.body.classList.toggle("dark");
+        }
+    </script>
+
+</body>
+
+</html>
+```
+
+
